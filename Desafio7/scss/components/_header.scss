@@ -1,0 +1,65 @@
+/* Disposición de los elementos del Header, el color del fondo, la posición fija y el borde */
+header {
+    @include parametros-display (space-between, row);
+    align-items: center;
+    background-color: nth($color-list, 4);
+    opacity: 0.9;
+    border: $borde-normal;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 50%);
+    z-index: 99999;
+
+    /* El tamaño, la posición del logo */
+    img {
+        width: 70px;
+        padding: 10px;
+        margin: 0 10px;
+    }
+
+    /* La tipografía, el estilo del título del header y una animación */
+    h1 {
+        @include parametros-font-color (nth($color-list, 2), nth($font-list, 1));
+        font-size: 2.5rem;
+        font-weight: 600;
+        letter-spacing: 1rem;
+        margin-bottom: 0;
+        margin-left: 20px;
+    }
+
+    /* El padding para separar un poco más el menú */
+    .dropdown {
+        padding-right: 15px;
+
+        /* La tipografía de los elementos del menú */
+        a {
+            background-color: nth($color-list, 4);
+            @include parametros-font-color (nth($color-list, 2), nth($font-list, 1));
+            border: unset;
+
+            /* El fondo cuando se pasa por encima del los elementos del menú */
+            &:hover {
+                background-color: nth($color-list, 1);
+            }
+        }
+
+        /* El color de las letras cuando se pasa por las diferentes opciones */
+        .menu-indice .dropdown-item {
+            &:hover {
+                color: nth($color-list, 4);
+            }
+        }
+    }
+
+    /* El querry para Mobile */
+    @media screen and (max-width: 576px) {
+        @include parametros-display (center, column);
+        position: relative;
+
+        .dropdown {
+            padding-right: 0px;
+            margin-bottom: 15px;
+        }
+    }
+}
