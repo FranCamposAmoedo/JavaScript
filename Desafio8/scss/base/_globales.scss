@@ -1,0 +1,26 @@
+/* Fuentes */
+/* Roboto-Regular de google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* Roboto-Italic Thin 100 de google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+/* Montserrat Regular 400 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+/* Source Sans pro light 300 */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+/* font-family: 'Source Sans Pro', sans-serif; */
+
+
+/* Reseteo de estilos de HTML */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* El tamaño de la fuente de todo el html para poder usar rem en las fuentes particulares */
+html {
+    font-size: 20px;
+    scroll-behavior: smooth;
+}

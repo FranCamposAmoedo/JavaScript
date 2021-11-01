@@ -1,0 +1,71 @@
+/* Cómo el Header es Fixed hay que agregarle un padding top a la foto para que no la pise */
+#inicio {
+    padding-top: 95px;
+
+    /* Para que el carousel se achique un poco y se pueda ver mejor */
+    #carouselExampleCaptions {
+        .carousel-inner {
+            .carousel-item {
+                img {
+                    width: 80%;
+                    margin: 0 auto;
+                }
+
+                /* Font y shadow en el texto del carousel */
+                div {
+                    font-family: nth($font-list, 1);
+                    text-shadow: 2px 1px nth($color-list, 3);
+
+                    /* El estilo, color y tamaño del link */
+                    p {
+                        a {
+                            text-decoration: none;
+                            font-size: 1.2rem;
+                            color: nth($color-list, 1);
+                            background-color: nth($color-list, 4);
+
+                            &:hover {
+                                color: nth($color-list, 4);
+                                background-color: nth($color-list, 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* La ubicación del botón para cambiar de imagen */
+        .boton-desliza {
+            width: 30%;
+        }
+    }
+
+    /* El querry para Mobile */
+    @media screen and (max-width: 576px) {
+        padding-top: 0px;
+    }
+
+    /* El querry para Tablet */
+    @media screen and (min-width: 576px) and (max-width: 996px) {
+        padding-top: 85px;
+    }
+
+    /* Para que el carousel ocupe toda la pantalla en Mobile y Tablet*/
+    @media screen and (max-width: 996px) {
+        #carouselExampleCaptions {
+            .carousel-inner {
+                .carousel-item {
+                    img {
+                        margin: 0;
+                        width: 100%;
+                    }
+                }
+            }
+
+            /* La ubicación del botón para cambiar de imagen */
+            .boton-desliza {
+                width: 15%;
+            }
+        }
+    }
+}
