@@ -1,6 +1,7 @@
+/* Dejo ésta primera parte de código para poder desarrollarla más adelante si es necesario */
 /* Inicializo la variable Total */
 let articulo = 0;
-let precio = 0;
+let price = 0;
 let cantidad = 0;
 let metodoDePago = 0;
 let subTotal = 0;
@@ -8,10 +9,10 @@ let confirmacion;
 const misArticulos = [];
 
 /* Armo el constructor */
-class Venta {
-  constructor(articulo, precio, cantidad, metodoDePago) {
+ class Venta {
+  constructor(articulo, price, cantidad, metodoDePago) {
     this.articulo = articulo,
-    this.precio = precio,
+    this.price = price,
     this.cantidad = cantidad,
     this.metodoDePago = metodoDePago,
     this.subTotal = subTotal,
@@ -20,17 +21,17 @@ class Venta {
   }
 
   /* La tuve q sumar dentro de la función sumarAlCarrito, porque no sabía como hacerse q se vaya acumulando */
-  sumarSubTotal() {
+   sumarSubTotal() {
     this.subTotal = subTotal;
   }
 
   /* Creo una función para sumarle el iva al subTotal */
-  sumarIVA() {
+   sumarIVA() {
     return this.subTotal * 0.21;
   }
 
   /* Función para hacer un descuento en efectivo */
-  sumarDescuento() {
+   sumarDescuento() {
     if ((this.metodoDePago == 1)) {
       return this.subTotal * 0.15;
     } else {
@@ -53,72 +54,102 @@ class Venta {
   }
 }
 
-/* Creo un constructor para generar un stock */
-class Stock {
-    constructor (producto, costo, color) {
-        this.producto = producto,
-        this.costo = costo,
-        this.color = color
-    }
-}
 
-const miStock = [
-    new Stock ("Reloj Dark Forest", 6900, "Oliva"),
-    new Stock ("Lentes de Aviador", 3000, "Caoba"),
-    new Stock ("Lentes Roble Claro,", 3000, "Roble Claro"),
-    new Stock ("Reloj Bamboo", 6900, "Bamboo"),
-];
 
-/* Ordeno el array de menor precio a mayor */
-miStock.sort((a, b) => a.costo - b.costo);
-console.log(miStock);
+/* Creo un array vacío para pushear los productos */
+let arrayProductos = [];
 
-/* Creo una función con un Do While para que el comprador elija los productos para sumar al carrito */
-function sumarAlCarrito() {
-  do {
-    articulo = parseInt(prompt("Qué árticulo querés comprar " + nombre + "?\n 1. Lentes ($3000)\n 2. Relojes ($6900)", 0));
-    cantidad = parseInt(prompt("Cuántas unidades?", 0));
-
-    switch (articulo) {
-      case 1:
-        articulo = "Lentes";
-        precio = 3000;
-        break;
-      case 2:
-        articulo = "Relojes";
-        precio = 6900;
-        break;
-      default:
-        alert("Datos incorrectos");
-        cantidad = 0;
-    }
-
-    subTotal += precio*cantidad;
-    /* Guardo la cantidad y el nombre de los articulos en un array */
-    misArticulos.push(cantidad, articulo);
-    otroProducto = confirm("Querés seguir comprando " + nombre + "??");
-  } while (otroProducto);
-
-  do {
-    metodoDePago = parseInt(prompt("Cómo va a abonar? \n  1. Efectivo\n  2. Transferencia o Débito", 0));
+/* Creo la clase constructora para los relojes */
+class Reloj {
+  constructor (nombre, madera, diametro, anchoCorrea, peso, precio) {
+      this.nombre = nombre;
+      this.madera = madera;
+      this.diametro = diametro;
+      this.anchoCorrea = anchoCorrea;
+      this.peso = peso;
+      this.precio = precio;
   }
-    while (metodoDePago != 1 && metodoDePago != 2);
 
-    confirmacion = confirm(nombre + " querés envío a domicilio? (si elige cancelar, tiene q retirar el producto por nuestro local)");
-
-    return new Venta (articulo, precio, cantidad, metodoDePago);
+  /* Agrego un toString para llamar los elementos que quiero en el carrito */
+  toString() {
+      return `Nombre: ${this.nombre} </br>
+      Tipo de madera: ${this.madera} </br>
+      Precio: $${this.precio}`;
+  }
 }
 
-/* Pido el nombre al usuario */
-let nombre = prompt("Hola! Bienvenidos a accesorios de Madera AFRIKA. Cuál es tu nombre?", "Pj.: Juan Carlos");
+/* Instancio el stock de los relojes */
+let relojCaoba = new Reloj ('Caoba', 'Nogal', 40, 16, 26, 7999);
+let relojRobleClaro = new Reloj ('Roble Claro', 'Roble', 40, 16, 24, 7699);
+let relojBamboo = new Reloj ('Bamboo', 'Bambú', 41, 17, 21, 7699);
+let relojDarkForest = new Reloj ('Dark Forest', 'Olivo', 41, 18, 24, 8199);
+let relojCuero = new Reloj ('Cuero', 'Nogal', 39, 16, 20, 7299);
 
-const venta = sumarAlCarrito();
+/* Los pusheo al arrayProductos */
+arrayProductos.push(relojCaoba);
+arrayProductos.push(relojRobleClaro);
+arrayProductos.push(relojBamboo);
+arrayProductos.push(relojDarkForest);
+arrayProductos.push(relojCuero);
 
-venta.sumarSubTotal();
-venta.sumarIVA();
-venta.sumarDescuento();
-venta.sumarEnvio();
-venta.sumarTotal();
+/* Creo una constante para guardar en LocalStorage el array de productos */
+const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
 
-/* Muestro por pantalla los detalles de la venta, incluido la cantidad y los nombres de los articulos con un join */
-alert("Gracias por comprar, " + nombre + "\n-Sus articulos son: " + misArticulos.join(" ") + "\n-Su subtotal es: " + venta.subTotal + "\n-El IVA es: " + venta.sumarIVA() + "\n-Descuento de: " + venta.sumarDescuento() + "\n-Costo de envío: " + venta.envio + "\n---El TOTAL final es de: " + venta.total);
+/* Creo un JSON y lo guardo mediante stringify en el LocalStorage */
+for (let i = 0; i < arrayProductos.length; i++) {
+  guardarLocal(arrayProductos[i].nombre, JSON.stringify(arrayProductos[i]));
+}
+
+/* Guardo en cada variable los nodos de los botones de cada reloj, el carrito y el botón para borrar */
+let reloj1 = document.getElementById('reloj1');
+let reloj2 = document.getElementById('reloj2');
+let reloj3 = document.getElementById('reloj3');
+let reloj4 = document.getElementById('reloj4');
+let reloj5 = document.getElementById('reloj5');
+let carrito = document.getElementById('carrito');
+let borrar = document.getElementById('borrar');
+
+/* Escucho el evento de click de los productos y llamo a las funciones correspondientes (Debería ser una sóla función, pero no se me ocurrió cómo) */
+reloj1.addEventListener('click', agregarAlCarrito1);
+reloj2.addEventListener('click', agregarAlCarrito2);
+reloj3.addEventListener('click', agregarAlCarrito3);
+reloj4.addEventListener('click', agregarAlCarrito4);
+reloj5.addEventListener('click', agregarAlCarrito5);
+borrar.addEventListener('click', borrarProductos);
+
+/* En cada función creo una variable carro dónde voy modificar el DOM del div "carrito" */
+function agregarAlCarrito1 () {
+  let carro = document.createElement ('div');
+  carro.classList.add ('seccion-productosJS');
+  carro.innerHTML = relojCaoba.toString();
+  carrito.appendChild (carro);
+}
+function agregarAlCarrito2 () {
+  let carro = document.createElement ('div');
+  carro.classList.add ('seccion-productosJS');
+  carro.innerHTML = relojRobleClaro.toString();
+  carrito.appendChild (carro);
+}
+function agregarAlCarrito3 () {
+  let carro = document.createElement ('div');
+  carro.classList.add ('seccion-productosJS');
+  carro.innerHTML = relojBamboo.toString();
+  carrito.appendChild (carro);
+}
+function agregarAlCarrito4 () {
+  let carro = document.createElement ('div');
+  carro.classList.add ('seccion-productosJS');
+  carro.innerHTML = relojDarkForest.toString();
+  carrito.appendChild (carro);
+}
+function agregarAlCarrito5 () {
+  let carro = document.createElement ('div');
+  carro.classList.add ('seccion-productosJS');
+  carro.innerHTML = relojCuero.toString();
+  carrito.appendChild (carro);
+}
+
+/* Creo una función para borrar el carrito al clickear */
+function borrarProductos () {
+  carrito.innerHTML = '';
+}

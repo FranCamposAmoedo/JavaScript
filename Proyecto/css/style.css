@@ -672,6 +672,16 @@ footer .derechos {
   /* Mobile */
   /* Para que el menú no aparezca por detrás de las cards. También sirve para el html Anteojos */
 }
+.seccion-productos .seccion-productosJS {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 50px 20px;
+  font-family: "Montserrat", sans-serif;
+}
+.seccion-productos .boton-borrar {
+  color: #FF3B3F;
+}
 .seccion-productos .item1:hover {
   content: url(../images/relojes/RelojNegroFondo.png);
 }
