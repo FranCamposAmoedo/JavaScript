@@ -1,0 +1,17 @@
+/* Mapa para las posiciones de la sección nosotros */
+
+$posicion-relativa: (
+    posicion: relative,
+    ancho: 100%,
+    alto: 420px,
+);
+
+$posicion-absoluta: (
+    posicion: absolute,
+    ancho: 100%,
+    alto: 100%,
+    estilo: italic,
+    align: justify,
+    size: 1.2rem,
+    opacidad: 0.8,
+);

@@ -1,0 +1,61 @@
+/* El título de más vendidos */
+#mas-vendidos h2 {
+    @extend %font-h2;
+}
+
+/* El orden de los productos y la disposición de los productos */
+#mas-vendidos .best-sellers {
+    @include parametros-display (space-evenly, row);
+    flex-wrap: wrap;
+
+    /* El borde, el background, el padding de cada producto y una transición */
+    .productos {
+        @include parametros-display (space-evenly, row);
+        align-items: center;
+        border: 0.8px solid nth($color-list, 4);
+        border-radius: 8px;
+        margin: 10px 0;
+        padding: 5px 10px 2px 10px;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 50%);
+
+        /* Para sacarle el subrayado y el azul a los links */
+        a {
+            text-decoration: none;
+            color: nth($color-list, 3);
+
+            /* El tamaño y el color de fondo de las imagenes */
+            .imagen {
+                width: 200px;
+                height: 170px;
+                border-radius: 12px 12px 0 0;
+            }
+
+            /* El estilo, color y ubicación del texto */
+            p {
+                @include parametros-font-color (nth($color-list, 3), nth($font-list, 3));
+                margin-top: 1.2rem;
+                text-align: center;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Para que cambie de color al pasar el mouse por encima y se escale */
+        &:hover {
+            background-color: nth($color-list, 1);
+            border: $borde-normal;
+            transform: scale(1.04);
+        }
+
+        /* Mobile */
+        @media screen and (max-width: 576px) {
+            margin: 25px 10px;
+        }
+
+        /* Tablet */
+        @media screen and (min-width: 576px) and (max-width: 992px) {
+            margin: 30px 20px;
+        }
+    }
+
+}

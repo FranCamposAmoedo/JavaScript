@@ -1,0 +1,803 @@
+@charset "UTF-8";
+/* Fuentes */
+/* Roboto-Regular de google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* Roboto-Italic Thin 100 de google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap");
+/* font-family: 'Roboto', sans-serif; */
+/* Montserrat Regular 400 */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+/* font-family: 'Montserrat', sans-serif; */
+/* Source Sans pro light 300 */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
+/* font-family: 'Source Sans Pro', sans-serif; */
+/* Reseteo de estilos de HTML */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* El tamaño de la fuente de todo el html para poder usar rem en las fuentes particulares */
+html {
+  font-size: 20px;
+  scroll-behavior: smooth;
+}
+
+/* El borde mas usado */
+/* Lista de Paleta de Colores */
+/* Lista de Fuentes */
+/* Propiedades que se repiten en los dos H3 */
+.contenedor-nosotros h2, #mas-vendidos h2 {
+  height: 80px;
+  color: #FF3B3F;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.75rem;
+  text-align: center;
+  vertical-align: center;
+  padding: 20px 0;
+  font-weight: 700;
+  word-spacing: 5px;
+  letter-spacing: 1px;
+  text-shadow: 2px 1px #56596c;
+}
+
+/* Propiedades que se repiten en las background-image de los productos */
+.seccion-productos .item-b5:hover, .seccion-productos .item-b4:hover, .seccion-productos .item-b3:hover, .seccion-productos .item-b2:hover, .seccion-productos .item-b1:hover, .seccion-productos .item5:hover, .seccion-productos .item4:hover, .seccion-productos .item3:hover, .seccion-productos .item2:hover, .seccion-productos .item1:hover {
+  background-size: cover;
+  border-radius: 10px;
+}
+
+/* Propiedades de los botones de los productos */
+.seccion-productos .cartas-productos .botones-productos {
+  color: #56596c;
+  background-color: white;
+  border-color: #56596c;
+}
+
+/* Propiedades de los botones cuando pasa el mouse por encima */
+.seccion-productos .cartas-productos .botones-productos:hover {
+  color: white;
+  background-color: #FF3B3F;
+  border-color: #FF3B3F;
+}
+
+/* Propiedades de los parrafos de la seccion Conciencia Global */
+.conciencia .conciencia-2, .conciencia .conciencia-1,
+.conciencia .conciencia-3 {
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: lighter;
+  line-height: 1.75rem;
+}
+
+/* Para simplificar cuando aparecen juntos */
+/* Dos parametros que aparecen casi siempre juntos */
+/* Mapa para las posiciones de la sección nosotros */
+/* Disposición de los elementos del Header, el color del fondo, la posición fija y el borde */
+header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  opacity: 0.9;
+  border: 1px solid black;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  /* El tamaño, la posición del logo */
+  /* La tipografía, el estilo del título del header y una animación */
+  /* El padding para separar un poco más el menú */
+  /* El querry para Mobile */
+}
+header img {
+  width: 70px;
+  padding: 10px;
+  margin: 0 10px;
+}
+header h1 {
+  color: #56596c;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 1rem;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+header .dropdown {
+  padding-right: 15px;
+  /* La tipografía de los elementos del menú */
+  /* El color de las letras cuando se pasa por las diferentes opciones */
+}
+header .dropdown a {
+  background-color: white;
+  color: #56596c;
+  font-family: "Montserrat", sans-serif;
+  border: unset;
+  /* El fondo cuando se pasa por encima del los elementos del menú */
+}
+header .dropdown a:hover {
+  background-color: #FF3B3F;
+}
+header .dropdown .menu-indice .dropdown-item:hover {
+  color: white;
+}
+@media screen and (max-width: 576px) {
+  header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  }
+  header .dropdown {
+    padding-right: 0px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Cómo el Header es Fixed hay que agregarle un padding top a la foto para que no la pise */
+#inicio {
+  padding-top: 95px;
+  /* Para que el carousel se achique un poco y se pueda ver mejor */
+  /* El querry para Mobile */
+  /* El querry para Tablet */
+  /* Para que el carousel ocupe toda la pantalla en Mobile y Tablet*/
+}
+#inicio #carouselExampleCaptions {
+  /* La ubicación del botón para cambiar de imagen */
+}
+#inicio #carouselExampleCaptions .carousel-inner .carousel-item {
+  /* Font y shadow en el texto del carousel */
+}
+#inicio #carouselExampleCaptions .carousel-inner .carousel-item img {
+  width: 80%;
+  margin: 0 auto;
+}
+#inicio #carouselExampleCaptions .carousel-inner .carousel-item div {
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 2px 1px black;
+  /* El estilo, color y tamaño del link */
+}
+#inicio #carouselExampleCaptions .carousel-inner .carousel-item div p a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #FF3B3F;
+  background-color: white;
+}
+#inicio #carouselExampleCaptions .carousel-inner .carousel-item div p a:hover {
+  color: white;
+  background-color: #FF3B3F;
+}
+#inicio #carouselExampleCaptions .boton-desliza {
+  width: 30%;
+}
+@media screen and (max-width: 576px) {
+  #inicio {
+    padding-top: 0px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 996px) {
+  #inicio {
+    padding-top: 85px;
+  }
+}
+@media screen and (max-width: 996px) {
+  #inicio #carouselExampleCaptions {
+    /* La ubicación del botón para cambiar de imagen */
+  }
+  #inicio #carouselExampleCaptions .carousel-inner .carousel-item img {
+    margin: 0;
+    width: 100%;
+  }
+  #inicio #carouselExampleCaptions .boton-desliza {
+    width: 15%;
+  }
+}
+
+/* El fondo del contenedor */
+.video-parrafo {
+  background-color: #EAEDED;
+  margin: 10px 0;
+  /* Un margin para el video */
+  /* El tamaño, la tipografía y el padding del párrafo que va al lado del vídeo */
+}
+.video-parrafo .video-conciencia {
+  margin: 30px 0px;
+  /* Redondeo de bordes y color del border */
+}
+.video-parrafo .video-conciencia video {
+  border-radius: 20px;
+  /* Mobile */
+}
+@media screen and (max-width: 576px) and (max-width: 992px) {
+  .video-parrafo .video-conciencia video {
+    width: 100%;
+  }
+}
+.video-parrafo .link-conciencia {
+  width: 40%;
+  font-family: "Roboto", sans-serif;
+  justify-content: center;
+  font-size: 1rem;
+  margin: 30px 10px;
+  /* Link para entrar en la sección conciencia global y una transición */
+  /* La alineación del texto */
+  /* Mobile */
+  /* Tablet */
+}
+.video-parrafo .link-conciencia a {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+  color: #FF3B3F;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  text-shadow: 2px 1px #56596c;
+  margin: 20px 0;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  border: 1px solid #FF3B3F;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  /* Al pasar el mouse sobre el link cambia de color */
+}
+.video-parrafo .link-conciencia a:hover {
+  background-color: #FF3B3F;
+  color: white;
+  font-size: 1.6rem;
+}
+.video-parrafo .link-conciencia p {
+  text-align: justify;
+}
+@media screen and (max-width: 576px) {
+  .video-parrafo .link-conciencia {
+    width: 100%;
+    padding: 0 40px;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .video-parrafo .link-conciencia {
+    width: 100%;
+    padding: 0 80px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile y Tablet */
+@media screen and (max-width: 992px) {
+  .video-parrafo {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: center;
+  }
+}
+/* El título de más vendidos */
+/* El orden de los productos y la disposición de los productos */
+#mas-vendidos .best-sellers {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* El borde, el background, el padding de cada producto y una transición */
+}
+#mas-vendidos .best-sellers .productos {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  border: 0.8px solid white;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 5px 10px 2px 10px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+  /* Para sacarle el subrayado y el azul a los links */
+  /* Para que cambie de color al pasar el mouse por encima y se escale */
+  /* Mobile */
+  /* Tablet */
+}
+#mas-vendidos .best-sellers .productos a {
+  text-decoration: none;
+  color: black;
+  /* El tamaño y el color de fondo de las imagenes */
+  /* El estilo, color y ubicación del texto */
+}
+#mas-vendidos .best-sellers .productos a .imagen {
+  width: 200px;
+  height: 170px;
+  border-radius: 12px 12px 0 0;
+}
+#mas-vendidos .best-sellers .productos a p {
+  color: black;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-top: 1.2rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+#mas-vendidos .best-sellers .productos:hover {
+  background-color: #FF3B3F;
+  border: 1px solid black;
+  transform: scale(1.04);
+}
+@media screen and (max-width: 576px) {
+  #mas-vendidos .best-sellers .productos {
+    margin: 25px 10px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  #mas-vendidos .best-sellers .productos {
+    margin: 30px 20px;
+  }
+}
+
+/* La caja que contiene la imagen, el título y el párrafo */
+.contenedor-nosotros {
+  width: 100%;
+  height: 420px;
+  position: relative;
+  margin-top: 20px;
+  /* El tamaño y la posición de la imagen */
+  /* El título de "Nosotros" */
+  /* El estilo, la tipografía y la ubicación del texto */
+}
+.contenedor-nosotros img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.contenedor-nosotros h2 {
+  position: relative;
+  text-shadow: 2px 1px black;
+}
+.contenedor-nosotros .parrafo-nosotros {
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+  position: absolute;
+  font-style: italic;
+  text-align: justify;
+  font-size: 1.2rem;
+  padding: 0px 70px;
+  text-shadow: 2px 1px black;
+  /* Un link para la sección de Conciencia */
+  /* Mobile */
+  /* Tablet */
+}
+.contenedor-nosotros .parrafo-nosotros a {
+  text-decoration: none;
+  color: #FF3B3F;
+}
+.contenedor-nosotros .parrafo-nosotros a:hover {
+  color: black;
+}
+@media screen and (max-width: 576px) {
+  .contenedor-nosotros .parrafo-nosotros {
+    padding: 0px 15px;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .contenedor-nosotros .parrafo-nosotros {
+    padding: 0px 40px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Fondo del footer con box shadow */
+footer {
+  background-color: #3B3B3B;
+  border: 1px solid black;
+  box-shadow: 1px -1px 5px 0 rgba(0, 0, 0, 0.5);
+  /* Ubicación de Logo, Nuestro contenido, Redes y Contacto */
+  /* Derechos reservados */
+}
+footer .menu-redes {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px 15px 0 15px;
+  /* El tamaño y la ubicación del Logo */
+  /* El título de las secciones del Footer */
+  /* Un menú para los links a diferentes sectores del sitio */
+  /* Para sacarle las viñetas a la lista */
+  /* Para sacarle el subrayado y el azul a los links. Estilo, color y font */
+  /* El contenedor de las redes sociales */
+  /* La disposición de los iconos de redes */
+  /* El contenedor de contactanos */
+  /* El estilo y la disposición de contacto */
+  /* Tablet */
+  /* Mobile */
+}
+footer .menu-redes .logo-marron {
+  width: 100px;
+  padding-right: 20px;
+  /* Tablet */
+  /* Mobile */
+}
+@media screen and (min-width: 576px) and (max-width: 1062px) {
+  footer .menu-redes .logo-marron {
+    padding-top: 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  footer .menu-redes .logo-marron {
+    padding-bottom: 20px;
+    padding-right: 0;
+    margin: 0 100px;
+  }
+}
+footer .menu-redes h4 {
+  color: #FF3B3F;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+}
+footer .menu-redes .nuestro-contenido {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 10px;
+  /* Para sacarle el padding q trae por defecto */
+}
+footer .menu-redes .nuestro-contenido ul {
+  padding-left: 0;
+  /* Tablet */
+  /* Mobile */
+}
+@media screen and (min-width: 576px) and (max-width: 1062px) {
+  footer .menu-redes .nuestro-contenido ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 576px) {
+  footer .menu-redes .nuestro-contenido ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+footer .menu-redes ul {
+  list-style: none;
+}
+footer .menu-redes a {
+  text-decoration: none;
+  color: #deb887;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  /* Cuando se pasa el cursor por encima de los íconos */
+}
+footer .menu-redes a:hover {
+  background-color: #FF3B3F;
+}
+footer .menu-redes .redes-sociales {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+}
+footer .menu-redes .redes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding-top: 15px;
+  padding-left: 0;
+  padding-right: auto;
+  flex-grow: 1;
+  /* El "relleno" de los links, para que el hover quede más prolijo y para espaciarlos entre sí */
+  /* Mobile */
+}
+footer .menu-redes .redes a {
+  padding: 20px;
+  /* Para que se redondee el contenedor de los íconos */
+  /* El tamaño de los íconos */
+}
+footer .menu-redes .redes a:hover {
+  border-radius: 50px;
+}
+footer .menu-redes .redes a img {
+  width: 30px;
+}
+@media screen and (max-width: 576px) {
+  footer .menu-redes .redes {
+    padding-top: 10px;
+    padding-right: 0px;
+  }
+}
+footer .menu-redes .contactenos {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-left: 5px;
+  /* Tablet y Mobile */
+}
+@media screen and (max-width: 1062px) {
+  footer .menu-redes .contactenos {
+    align-items: center;
+  }
+}
+footer .menu-redes .contacto {
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-size: 0.8rem;
+  text-align: right;
+  padding-left: 0;
+  /* Cuando se pasa el cursor por encima de contacto */
+  /* Mobile y Tablet*/
+}
+footer .menu-redes .contacto a:hover {
+  background-color: #FF3B3F;
+}
+@media screen and (max-width: 1062px) {
+  footer .menu-redes .contacto {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 1062px) {
+  footer .menu-redes {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 576px) {
+  footer .menu-redes {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+footer .derechos {
+  color: #deb887;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.75rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* Cómo el Header es Fixed hay que agregarle un padding top a la foto para que no la pise */
+.conciencia {
+  padding-top: 85px;
+  /* Tipografía, tamaño, color, estilos y disposición de los bloques (imagen más párrafo) */
+  /* Tipografía, tamaño, color, estilos y disposición de los bloques (imagen más párrafo) */
+  /* El tamaño de las imágenes */
+  /* El padding para que los párrafos queden centrados */
+  /* Mobile */
+}
+.conciencia .conciencia-1,
+.conciencia .conciencia-3 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  color: black;
+  font-family: "Source Sans Pro", sans-serif;
+  /* Mobile y Tablet */
+  /* Márgen para que los textos queden centrados */
+}
+@media screen and (max-width: 992px) {
+  .conciencia .conciencia-1,
+.conciencia .conciencia-3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.conciencia .conciencia-1 .parrafo-conciencia,
+.conciencia .conciencia-3 .parrafo-conciencia {
+  margin-right: 70px;
+  /* Mobile y Tablet */
+}
+@media screen and (max-width: 992px) {
+  .conciencia .conciencia-1 .parrafo-conciencia,
+.conciencia .conciencia-3 .parrafo-conciencia {
+    margin: 2px;
+    width: auto;
+  }
+}
+.conciencia .conciencia-2 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  color: black;
+  font-family: "Source Sans Pro", sans-serif;
+  flex-direction: row-reverse;
+  /* Mobile y Tablet */
+  /* Márgen para que los textos queden centrados */
+}
+@media screen and (max-width: 992px) {
+  .conciencia .conciencia-2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.conciencia .conciencia-2 .parrafo-conciencia {
+  margin-left: 70px;
+  /* Mobile y Tablet */
+}
+@media screen and (max-width: 992px) {
+  .conciencia .conciencia-2 .parrafo-conciencia {
+    margin: 2px;
+    width: auto;
+  }
+}
+.conciencia .imagen-conciencia {
+  width: 50%;
+  /* Mobile y Tablet */
+}
+@media screen and (max-width: 992px) {
+  .conciencia .imagen-conciencia {
+    width: 100%;
+  }
+}
+.conciencia .parrafo-conciencia {
+  width: 520px;
+  padding: 0 60px;
+  text-align: center;
+  /* El grosor del titulo de cada bloque */
+}
+.conciencia .parrafo-conciencia::first-line {
+  font-weight: bold;
+}
+@media screen and (max-width: 576px) {
+  .conciencia {
+    padding-top: 0;
+  }
+}
+
+/* El margin de la sección y la tipografía */
+.seccion-productos {
+  margin-top: 100px;
+  margin-bottom: 15px;
+  font-family: "Montserrat", sans-serif;
+  /* Cuando pasas el mouse por las imaágenes cambia de fondo */
+  /* La posición de las cards */
+  /* Mobile */
+  /* Para que el menú no aparezca por detrás de las cards. También sirve para el html Anteojos */
+}
+.seccion-productos .seccion-productosJS {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 50px 20px;
+  font-family: "Montserrat", sans-serif;
+}
+.seccion-productos .boton-borrar {
+  color: #FF3B3F;
+}
+.seccion-productos .item1:hover {
+  content: url(../images/relojes/RelojNegroFondo.png);
+}
+.seccion-productos .item2:hover {
+  content: url(../images/relojes/RelojClaroPalo.png);
+}
+.seccion-productos .item3:hover {
+  content: url(../images/relojes/RelojBambooFondo.png);
+}
+.seccion-productos .item4:hover {
+  content: url(../images/relojes/RelojDarkForestFondo.png);
+}
+.seccion-productos .item5:hover {
+  content: url(../images/relojes/RelojOscuroCueroBack.png);
+}
+.seccion-productos .cartas-productos {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* Para hacer negrita los titulos */
+  /* La justificación del texto */
+  /* El color de los botones */
+}
+.seccion-productos .cartas-productos h5 {
+  font-weight: bold;
+}
+.seccion-productos .cartas-productos .parrafos-productos {
+  margin-bottom: 0;
+}
+.seccion-productos .cartas-productos .parrafos-productos div strong {
+  margin: 10px 0;
+  text-decoration: none;
+}
+.seccion-productos .cartas-productos .parrafos-productos div p {
+  margin-bottom: 5px;
+}
+@media screen and (max-width: 576px) {
+  .seccion-productos {
+    margin-top: 15px;
+  }
+  .seccion-productos .card {
+    position: unset;
+  }
+}
+
+/* El margin de la sección y la tipografía */
+.seccion-productos {
+  margin-top: 100px;
+  margin-bottom: 15px;
+  font-family: "Montserrat", sans-serif;
+  /* Cuando pasas el mouse por las imaágenes cambia de fondo */
+  /* La posición de las cards */
+  /* Mobile */
+}
+.seccion-productos .item-b1:hover {
+  content: url(../images/lentes/AnteojosGrisesFondo.png);
+}
+.seccion-productos .item-b2:hover {
+  content: url(../images/lentes/AnteojosMaderaFondo.png);
+}
+.seccion-productos .item-b3:hover {
+  content: url(../images/lentes/AnteojosAviadoresFondo.png);
+}
+.seccion-productos .item-b4:hover {
+  content: url(../images/lentes/AnteojosRobleClaroFondo.png);
+}
+.seccion-productos .item-b5:hover {
+  content: url(../images/lentes/AnteojosRobleOscuroFondo.png);
+}
+.seccion-productos .cartas-productos {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* Para hacer negrita los titulos */
+  /* La justificación del texto */
+  /* El color de los botones */
+}
+.seccion-productos .cartas-productos h5 {
+  font-weight: bold;
+}
+.seccion-productos .cartas-productos .parrafos-productos {
+  text-align: justify;
+}
+@media screen and (max-width: 576px) {
+  .seccion-productos {
+    margin-top: 15px;
+  }
+}
+
+.page-not-found {
+  width: 100%;
+}
+.page-not-found h1 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-top: 20px;
+}
+.page-not-found img {
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+.page-not-found p {
+  text-align: center;
+}
+.page-not-found a {
+  text-align: center;
+  text-decoration: none;
+  color: #FF3B3F;
+  display: block;
+  margin: 20px auto;
+}
+.page-not-found a:hover {
+  transform: scale(1.5);
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,64 @@
+
+/* El margin de la sección y la tipografía */
+.seccion-productos {
+    margin-top: 100px;
+    margin-bottom: 15px;
+    font-family: nth($font-list , 1);
+
+    /* Cuando pasas el mouse por las imaágenes cambia de fondo */
+    .item-b1:hover {
+        content: url(../images/lentes/AnteojosGrisesFondo.png);
+        @extend %bg-img-size;
+    }
+
+    .item-b2:hover {
+        content: url(../images/lentes/AnteojosMaderaFondo.png);
+        @extend %bg-img-size;
+    }
+
+    .item-b3:hover {
+        content: url(../images/lentes/AnteojosAviadoresFondo.png);
+        @extend %bg-img-size;
+    }
+
+    .item-b4:hover {
+        content: url(../images/lentes/AnteojosRobleClaroFondo.png);
+        @extend %bg-img-size;
+    }
+
+    .item-b5:hover {
+        content: url(../images/lentes/AnteojosRobleOscuroFondo.png);
+        @extend %bg-img-size;
+    }
+
+    /* La posición de las cards */
+    .cartas-productos {
+        @include parametros-display (center, row);
+        flex-wrap: wrap;
+        
+
+        /* Para hacer negrita los titulos */
+        h5 {
+            font-weight: bold;
+        }
+
+        /* La justificación del texto */
+        .parrafos-productos {
+            text-align: justify;
+        }
+
+        /* El color de los botones */
+        .botones-productos {
+            @extend %ext-buttons;
+
+            &:hover {
+                @extend %ext-buttons-hover;
+            }
+        }
+    }
+
+    /* Mobile */
+    @media screen and (max-width: 576px) {
+        margin-top: 15px;
+    }
+}

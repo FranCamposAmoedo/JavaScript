@@ -1,0 +1,31 @@
+.page-not-found {
+    width: 100%;
+
+    h1 {
+        font-family: nth($font-list , 1);
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    img {
+        width: 400px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    a {
+        text-align: center;
+        text-decoration: none;
+        color: nth($color-list , 1);
+        display: block;
+        margin: 20px auto;
+
+        &:hover {
+            transform: scale(1.5);
+        }
+    }
+}

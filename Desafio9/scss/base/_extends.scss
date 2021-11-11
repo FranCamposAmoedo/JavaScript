@@ -1,0 +1,43 @@
+/* Propiedades que se repiten en los dos H3 */
+%font-h2 {
+    height: 80px;
+    color: nth($color-list, 1);
+    font-family: nth($font-list, 1);
+    font-size: 1.75rem;
+    text-align: center;
+    vertical-align: center;
+    padding: 20px 0;
+    font-weight: 700;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+    text-shadow: 2px 1px nth($color-list , 2);
+}
+
+/* Propiedades que se repiten en las background-image de los productos */
+%bg-img-size {
+    background-size: cover;
+    border-radius: 10px;
+}
+
+/* Propiedades de los botones de los productos */
+%ext-buttons {
+    color: nth($color-list, 2);
+    background-color: nth($color-list, 4);
+    border-color: nth($color-list, 2);
+}
+
+/* Propiedades de los botones cuando pasa el mouse por encima */
+%ext-buttons-hover {
+    color: nth($color-list , 4);
+    background-color: nth($color-list , 1);
+    border-color: nth($color-list , 1);
+}
+
+/* Propiedades de los parrafos de la seccion Conciencia Global */
+%ext-parrafos-conciencia {
+    align-items: center;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: lighter;
+        line-height: 1.75rem;
+}

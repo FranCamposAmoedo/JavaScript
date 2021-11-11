@@ -1,0 +1,54 @@
+/* La caja que contiene la imagen, el título y el párrafo */
+.contenedor-nosotros {
+    width: map-get($posicion-relativa , ancho);
+    height: map-get($posicion-relativa , alto);
+    position: map-get($posicion-relativa , posicion);
+    margin-top: 20px;
+
+    /* El tamaño y la posición de la imagen */
+    img {
+        position: map-get($posicion-absoluta , posicion);
+        width: map-get($posicion-absoluta , ancho);
+        height: map-get($posicion-absoluta , alto);
+    }
+
+    /* El título de "Nosotros" */
+    h2 {
+        @extend %font-h2;
+        position: relative;
+        text-shadow: 2px 1px nth($color-list , 3);
+    }
+
+    /* El estilo, la tipografía y la ubicación del texto */
+    .parrafo-nosotros {
+        @include parametros-font-color (nth($color-list , 4), nth($font-list , 3));
+        position: map-get($posicion-absoluta , posicion);
+        font-style: map-get($posicion-absoluta , estilo);
+        text-align: map-get($posicion-absoluta , align);
+        font-size: map-get($posicion-absoluta, size);
+        padding: 0px 70px;
+        text-shadow: 2px 1px nth($color-list , 3);
+
+        /* Un link para la sección de Conciencia */
+        a {
+            text-decoration: none;
+            color: nth($color-list, 1);
+
+            &:hover {
+                color: nth($color-list , 3);
+            }
+        }
+
+        /* Mobile */
+        @media screen and (max-width: 576px) {
+            padding: 0px 15px;
+            font-size: 0.8rem;
+        }
+
+        /* Tablet */
+        @media screen and (min-width: 576px) and (max-width: 992px) {
+            padding: 0px 40px;
+            font-size: 0.9rem;
+        }
+    }
+}

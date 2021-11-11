@@ -1,0 +1,83 @@
+/* Cómo el Header es Fixed hay que agregarle un padding top a la foto para que no la pise */
+.conciencia {
+    padding-top: 85px;
+
+    /* Tipografía, tamaño, color, estilos y disposición de los bloques (imagen más párrafo) */
+    .conciencia-1,
+    .conciencia-3 {
+        @include parametros-display (space-between, row);
+        @include parametros-font-color (nth($color-list , 3), nth($font-list , 3));
+        @extend %ext-parrafos-conciencia;
+
+        /* Mobile y Tablet */
+        @media screen and (max-width: 992px) {
+            @include parametros-display (center, row);
+            flex-wrap: wrap;
+        }
+
+
+        /* Márgen para que los textos queden centrados */
+        .parrafo-conciencia {
+            margin-right: 70px;
+
+            /* Mobile y Tablet */
+            @media screen and (max-width: 992px) {
+                margin: 2px;
+                width: auto;
+            }
+        }
+    }
+
+    /* Tipografía, tamaño, color, estilos y disposición de los bloques (imagen más párrafo) */
+    .conciencia-2 {
+        @include parametros-display (space-between, row);
+        @include parametros-font-color (nth($color-list , 3), nth($font-list , 3));
+        @extend %ext-parrafos-conciencia;
+        flex-direction: row-reverse;
+
+        /* Mobile y Tablet */
+        @media screen and (max-width: 992px) {
+            @include parametros-display (center, row);
+            flex-wrap: wrap;
+        }
+
+        /* Márgen para que los textos queden centrados */
+        .parrafo-conciencia {
+            margin-left: 70px;
+
+            /* Mobile y Tablet */
+            @media screen and (max-width: 992px) {
+                margin: 2px;
+                width: auto;
+            }
+        }
+    }
+
+    /* El tamaño de las imágenes */
+    .imagen-conciencia {
+        width: 50%;
+
+        /* Mobile y Tablet */
+        @media screen and (max-width: 992px) {
+            width: 100%;
+        }
+    }
+
+    /* El padding para que los párrafos queden centrados */
+    .parrafo-conciencia {
+        width: 520px;
+        padding: 0 60px;
+        text-align: center;
+
+        /* El grosor del titulo de cada bloque */
+        &::first-line {
+            font-weight: bold;
+        }
+    }
+
+    /* Mobile */
+    @media screen and (max-width: 576px) {
+        padding-top: 0;
+    }
+
+}

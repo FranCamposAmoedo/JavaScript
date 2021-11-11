@@ -1,0 +1,92 @@
+/* El margin de la sección y la tipografía */
+.seccion-productos {
+    margin-top: 100px;
+    margin-bottom: 15px;
+    font-family: nth($font-list, 1);
+
+    .seccion-productosJS {
+        border: $borde-normal;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 50px 20px;
+        font-family: nth($font-list, 1);
+    }
+
+    .boton-borrar {
+        color : nth($color-list , 1);
+    }
+
+    /* Cuando pasas el mouse por las imaágenes cambia de fondo */
+    .item1:hover {
+        content: url(../images/relojes/RelojNegroFondo.png);
+        @extend %bg-img-size;
+    }
+
+    .item2:hover {
+        content: url(../images/relojes/RelojClaroPalo.png);
+        @extend %bg-img-size;
+    }
+
+    .item3:hover {
+        content: url(../images/relojes/RelojBambooFondo.png);
+        @extend %bg-img-size;
+    }
+
+    .item4:hover {
+        content: url(../images/relojes/RelojDarkForestFondo.png);
+        @extend %bg-img-size;
+    }
+
+    .item5:hover {
+        content: url(../images/relojes/RelojOscuroCueroBack.png);
+        @extend %bg-img-size;
+    }
+
+    /* La posición de las cards */
+    .cartas-productos {
+        @include parametros-display (center, row);
+        flex-wrap: wrap;
+
+        /* Para hacer negrita los titulos */
+        h5 {
+            font-weight: bold;
+        }
+
+        /* La justificación del texto */
+        .parrafos-productos {
+            margin-bottom: 0;
+
+            div {
+                strong {
+                    margin: 10px 0;
+                    text-decoration: none;
+                }
+
+                p {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+
+        /* El color de los botones */
+        .botones-productos {
+            @extend %ext-buttons;
+
+            &:hover {
+                @extend %ext-buttons-hover;
+            }
+        }
+    }
+
+    /* Mobile */
+    /* Para que el menú no aparezca por detrás de las cards. También sirve para el html Anteojos */
+    @media screen and (max-width: 576px) {
+        margin-top: 15px;
+
+        .card {
+            position: unset;
+        }
+    }
+
+
+}
