@@ -106,7 +106,12 @@ header h1 {
   font-weight: 600;
   letter-spacing: 1rem;
   margin-bottom: 0;
-  margin-left: 20px;
+  margin-left: 200px;
+}
+header #btnCarrito {
+  border: none;
+  background-color: white;
+  margin-right: 20px;
 }
 header .dropdown {
   padding-right: 15px;
@@ -600,8 +605,15 @@ footer .derechos {
 }
 .conciencia .conciencia-1 .parrafo-conciencia,
 .conciencia .conciencia-3 .parrafo-conciencia {
-  margin-right: 70px;
+  margin-right: 170px;
+  /* Desktops con resoluciones bajas */
   /* Mobile y Tablet */
+}
+@media screen and (min-width: 992px) and (max-width: 1600px) {
+  .conciencia .conciencia-1 .parrafo-conciencia,
+.conciencia .conciencia-3 .parrafo-conciencia {
+    margin: 70px;
+  }
 }
 @media screen and (max-width: 992px) {
   .conciencia .conciencia-1 .parrafo-conciencia,
@@ -629,8 +641,14 @@ footer .derechos {
   }
 }
 .conciencia .conciencia-2 .parrafo-conciencia {
-  margin-left: 70px;
+  margin-left: 170px;
+  /* Desktops con resoluciones bajas */
   /* Mobile y Tablet */
+}
+@media screen and (min-width: 992px) and (max-width: 1600px) {
+  .conciencia .conciencia-2 .parrafo-conciencia {
+    margin: 70px;
+  }
 }
 @media screen and (max-width: 992px) {
   .conciencia .conciencia-2 .parrafo-conciencia {
@@ -671,16 +689,6 @@ footer .derechos {
   /* La posición de las cards */
   /* Mobile */
   /* Para que el menú no aparezca por detrás de las cards. También sirve para el html Anteojos */
-}
-.seccion-productos .seccion-productosJS {
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 50px 20px;
-  font-family: "Montserrat", sans-serif;
-}
-.seccion-productos .boton-borrar {
-  color: #FF3B3F;
 }
 .seccion-productos .item1:hover {
   content: url(../images/relojes/RelojNegroFondo.png);
@@ -771,6 +779,32 @@ footer .derechos {
   .seccion-productos {
     margin-top: 15px;
   }
+}
+
+#seccionCarrito {
+  color: #56596c;
+  margin-top: 100px;
+}
+
+.seccion-productosJS {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 50px 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.padre-boton-borrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton-borrar {
+  color: #FF3B3F;
+  background-color: white;
+  border: none;
+  margin: 15px 0;
 }
 
 .page-not-found {
